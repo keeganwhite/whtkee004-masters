@@ -1,0 +1,30 @@
+{
+  "flows": [
+    {
+      "priority": 42500,
+      "timeout": 0,
+      "isPermanent": true,
+      "deviceId": "of:0000000000000003",
+      "treatment": {
+        "instructions": [
+          {
+            "type": "OUTPUT",
+            "port": "2"
+          },
+          {
+            "type": "METER",
+            "meterId": 1
+          }
+        ]
+      },
+      "selector": {
+        "criteria": [
+          {
+            "type": "ETH_SRC",
+            "mac": "00:00:00:00:11:11"
+          }
+        ]
+      }
+    }
+  ]
+}

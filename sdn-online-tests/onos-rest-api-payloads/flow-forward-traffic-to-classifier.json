@@ -1,0 +1,34 @@
+{
+  "flows": [
+    {
+      "priority": 41000,
+      "timeout": 5,
+      "isPermanent": false,
+      "deviceId": "of:00001c61b4fefb88",
+      "treatment": {
+        "instructions": [
+          {
+            "type": "OUTPUT",
+            "port": "1"
+          },
+          {
+            "type": "OUTPUT",
+            "port": "CONTROLLER"
+          }
+        ]
+      },
+      "selector": {
+        "criteria": [
+          {
+            "type": "IN_PORT",
+            "port": "2"
+          }
+
+        ]
+      }
+    }
+  ]
+}
+
+curl -X POST --user onos:rocks --header 'Content-Type: application/json' --header 'Accept: application/json' -d {"flows":1} 'http://127.0.0.1:8181/onos/v1/flows?appId=0x1234'
+curl -X GET --user onos:rocks --header 'Accept: application/json' 'http://127.0.0.1:8181/onos/v1/devices'
